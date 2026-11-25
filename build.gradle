@@ -3,7 +3,6 @@ plugins {
 }
 
 repositories {
-	mavenLocal()
 	maven {
 		url = 'https://repo.runelite.net'
 		content {
@@ -14,7 +13,7 @@ repositories {
 }
 
 def runeLiteVersion = 'latest.release'
-def pluginMainClass = 'com.example.ExamplePluginTest'
+def pluginMainClass = 'com.spellrunereference.SpellRuneReferencePluginTest'
 
 dependencies {
 	compileOnly group: 'net.runelite', name:'client', version: runeLiteVersion
@@ -27,7 +26,7 @@ dependencies {
 	testImplementation group: 'net.runelite', name:'jshell', version: runeLiteVersion
 }
 
-group = 'com.example'
+group = 'com.spellrunereference'
 
 tasks.withType(JavaCompile).configureEach {
 	options.encoding = 'UTF-8'

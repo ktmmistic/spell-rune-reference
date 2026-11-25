@@ -1,0 +1,243 @@
+package com.spellrunereference;
+
+import java.util.Arrays;
+import java.util.Collections;
+import java.util.List;
+import lombok.Getter;
+
+/**
+ * The four spellbooks and their spells, sorted by Magic level.
+ * Data checked against the OSRS Wiki in November 2026.
+ */
+@Getter
+public enum Spellbook
+{
+	STANDARD("Standard", Arrays.asList(
+		s("N/A", "Lumbridge Home Teleport", "None"),
+		s("N/A", "Minigame Teleport", "None"),
+		s("1", "Wind Strike", "1 Air, 1 Mind"),
+		s("3", "Confuse", "2 Earth, 3 Water, 1 Body"),
+		s("4", "Enchant Crossbow Bolt (Opal)", "2 Air, 1 Cosmic"),
+		s("5", "Water Strike", "1 Air, 1 Water, 1 Mind"),
+		s("7", "Lvl-1 Enchant", "1 Water, 1 Cosmic"),
+		s("7", "Enchant Crossbow Bolt (Sapphire)", "1 Water, 1 Cosmic, 1 Mind"),
+		s("9", "Earth Strike", "1 Air, 2 Earth, 1 Mind"),
+		s("11", "Weaken", "2 Earth, 3 Water, 1 Body"),
+		s("13", "Fire Strike", "2 Air, 3 Fire, 1 Mind"),
+		s("14", "Enchant Crossbow Bolt (Jade)", "2 Earth, 1 Cosmic"),
+		s("15", "Bones to Bananas", "2 Earth, 2 Water, 1 Nature"),
+		s("17", "Wind Bolt", "2 Air, 1 Chaos"),
+		s("19", "Curse", "3 Earth, 2 Water, 1 Body"),
+		s("20", "Bind", "3 Earth, 3 Water, 2 Nature"),
+		s("21", "Low Level Alchemy", "3 Fire, 1 Nature"),
+		s("23", "Water Bolt", "2 Air, 2 Water, 1 Chaos"),
+		s("24", "Enchant Crossbow Bolt (Pearl)", "2 Water, 1 Cosmic"),
+		s("25", "Varrock Teleport", "3 Air, 1 Fire, 1 Law"),
+		s("27", "Lvl-2 Enchant", "3 Air, 1 Cosmic"),
+		s("27", "Enchant Crossbow Bolt (Emerald)", "3 Air, 1 Cosmic, 1 Nature"),
+		s("29", "Earth Bolt", "2 Air, 3 Earth, 1 Chaos"),
+		s("29", "Enchant Crossbow Bolt (Red Topaz)", "2 Fire, 1 Cosmic"),
+		s("31", "Lumbridge Teleport", "3 Air, 1 Earth, 1 Law"),
+		s("33", "Telekinetic Grab", "1 Air, 1 Law"),
+		s("35", "Fire Bolt", "3 Air, 4 Fire, 1 Chaos"),
+		s("37", "Falador Teleport", "3 Air, 1 Water, 1 Law"),
+		s("39", "Crumble Undead", "2 Air, 2 Earth, 1 Chaos"),
+		s("40", "Teleport to House", "1 Air, 1 Earth, 1 Law"),
+		s("41", "Wind Blast", "3 Air, 1 Death"),
+		s("42", "Monster Inspect", "2 Body, 2 Mind"),
+		s("43", "Superheat Item", "4 Fire, 1 Nature"),
+		s("45", "Camelot Teleport", "5 Air, 1 Law"),
+		s("47", "Water Blast", "3 Air, 3 Water, 1 Death"),
+		s("48", "Kourend Castle Teleport", "1 Fire, 1 Water, 2 Law"),
+		s("49", "Lvl-3 Enchant", "5 Fire, 1 Cosmic"),
+		s("49", "Enchant Crossbow Bolt (Ruby)", "5 Fire, 1 Blood, 1 Cosmic"),
+		s("50", "Iban Blast", "5 Fire, 1 Death (+ Iban's staff)"),
+		s("50", "Magic Dart", "1 Death, 4 Mind (+ Slayer's staff)"),
+		s("50", "Snare", "4 Earth, 4 Water, 3 Nature"),
+		s("51", "Ardougne Teleport", "2 Water, 2 Law"),
+		s("53", "Earth Blast", "3 Air, 4 Earth, 1 Death"),
+		s("54", "Civitas illa Fortis Teleport", "1 Earth, 1 Fire, 2 Law"),
+		s("55", "High Level Alchemy", "5 Fire, 1 Nature"),
+		s("56", "Charge Water Orb", "30 Water, 3 Cosmic (+ 1 unpowered orb)"),
+		s("56", "Summon Boat", "1 Earth, 1 Water, 2 Law"),
+		s("57", "Lvl-4 Enchant", "10 Earth, 1 Cosmic"),
+		s("57", "Enchant Crossbow Bolt (Diamond)", "10 Earth, 1 Cosmic, 2 Law"),
+		s("58", "Watchtower Teleport", "2 Earth, 2 Law"),
+		s("59", "Fire Blast", "4 Air, 5 Fire, 1 Death"),
+		s("60", "Bones to Peaches", "2 Earth, 4 Water, 2 Nature"),
+		s("60", "Charge Earth Orb", "30 Earth, 3 Cosmic (+ 1 unpowered orb)"),
+		s("60", "Saradomin Strike", "4 Air, 2 Fire, 2 Blood (+ Saradomin staff)"),
+		s("60", "Claws of Guthix", "4 Air, 1 Fire, 2 Blood (+ Guthix staff)"),
+		s("60", "Flames of Zamorak", "1 Air, 4 Fire, 2 Blood (+ Zamorak staff)"),
+		s("61", "Trollheim Teleport", "2 Fire, 2 Law"),
+		s("62", "Wind Wave", "5 Air, 1 Blood"),
+		s("63", "Charge Fire Orb", "30 Fire, 3 Cosmic (+ 1 unpowered orb)"),
+		s("64", "Ape Atoll Teleport", "2 Fire, 2 Water, 2 Law (+ 1 banana)"),
+		s("65", "Water Wave", "5 Air, 7 Water, 1 Blood"),
+		s("66", "Charge Air Orb", "30 Air, 3 Cosmic (+ 1 unpowered orb)"),
+		s("66", "Vulnerability", "5 Earth, 5 Water, 1 Soul"),
+		s("67", "Teleport to Boat", "2 Earth, 2 Water, 2 Law"),
+		s("68", "Lvl-5 Enchant", "15 Earth, 15 Water, 1 Cosmic"),
+		s("68", "Enchant Crossbow Bolt (Dragonstone)", "15 Earth, 1 Cosmic, 1 Soul"),
+		s("70", "Earth Wave", "5 Air, 7 Earth, 1 Blood"),
+		s("73", "Enfeeble", "8 Earth, 8 Water, 1 Soul"),
+		s("74", "Teleother Lumbridge", "1 Earth, 1 Law, 1 Soul"),
+		s("75", "Fire Wave", "5 Air, 7 Fire, 1 Blood"),
+		s("79", "Entangle", "5 Earth, 5 Water, 4 Nature"),
+		s("80", "Charge", "3 Air, 3 Fire, 3 Blood"),
+		s("80", "Stun", "12 Earth, 12 Water, 1 Soul"),
+		s("81", "Wind Surge", "7 Air, 1 Wrath"),
+		s("82", "Teleother Falador", "1 Water, 1 Law, 1 Soul"),
+		s("85", "Tele Block", "1 Chaos, 1 Death, 1 Law"),
+		s("85", "Teleport to Target", "1 Chaos, 1 Death, 1 Law"),
+		s("85", "Water Surge", "7 Air, 10 Water, 1 Wrath"),
+		s("87", "Lvl-6 Enchant", "20 Earth, 20 Fire, 1 Cosmic"),
+		s("87", "Enchant Crossbow Bolt (Onyx)", "20 Fire, 1 Cosmic, 1 Death"),
+		s("90", "Earth Surge", "7 Air, 10 Earth, 1 Wrath"),
+		s("90", "Teleother Camelot", "1 Law, 2 Soul"),
+		s("93", "Lvl-7 Enchant", "20 Blood, 1 Cosmic, 20 Soul"),
+		s("95", "Fire Surge", "7 Air, 10 Fire, 1 Wrath")
+	)),
+
+	ANCIENT("Ancient Magicks", Arrays.asList(
+		s("0", "Edgeville Home Teleport", "None"),
+		s("0", "Minigame Teleport", "None"),
+		s("50", "Smoke Rush", "1 Air, 1 Fire, 2 Chaos, 2 Death"),
+		s("52", "Shadow Rush", "1 Air, 2 Chaos, 2 Death, 1 Soul"),
+		s("54", "Paddewwa Teleport", "1 Air, 1 Fire, 2 Law"),
+		s("56", "Blood Rush", "1 Blood, 2 Chaos, 2 Death"),
+		s("58", "Ice Rush", "2 Water, 2 Chaos, 2 Death"),
+		s("60", "Senntisten Teleport", "2 Law, 1 Soul"),
+		s("62", "Smoke Burst", "2 Air, 2 Fire, 4 Chaos, 2 Death"),
+		s("64", "Shadow Burst", "1 Air, 4 Chaos, 2 Death, 2 Soul"),
+		s("66", "Kharyrll Teleport", "1 Blood, 2 Law"),
+		s("68", "Blood Burst", "2 Blood, 4 Chaos, 2 Death"),
+		s("70", "Ice Burst", "4 Water, 4 Chaos, 2 Death"),
+		s("72", "Lassar Teleport", "4 Water, 2 Law"),
+		s("74", "Smoke Blitz", "2 Air, 2 Fire, 2 Blood, 2 Death"),
+		s("76", "Shadow Blitz", "2 Air, 2 Blood, 2 Death, 2 Soul"),
+		s("78", "Dareeyak Teleport", "2 Air, 3 Fire, 2 Law"),
+		s("80", "Blood Blitz", "4 Blood, 2 Death"),
+		s("82", "Ice Blitz", "3 Water, 2 Blood, 2 Death"),
+		s("84", "Carrallanger Teleport", "2 Law, 2 Soul"),
+		s("85", "Teleport to Target", "1 Chaos, 1 Death, 1 Law"),
+		s("86", "Smoke Barrage", "4 Air, 4 Fire, 2 Blood, 4 Death"),
+		s("88", "Shadow Barrage", "4 Air, 2 Blood, 4 Death, 3 Soul"),
+		s("90", "Annakarl Teleport", "2 Blood, 2 Law"),
+		s("92", "Blood Barrage", "4 Blood, 4 Death, 1 Soul"),
+		s("94", "Ice Barrage", "6 Water, 2 Blood, 4 Death"),
+		s("96", "Ghorrock Teleport", "8 Water, 2 Law")
+	)),
+
+	LUNAR("Lunar", Arrays.asList(
+		s("0", "Lunar Home Teleport", "None"),
+		s("0", "Minigame Teleport", "None"),
+		s("65", "Bake Pie", "5 Fire, 4 Water, 1 Astral"),
+		s("65", "Geomancy", "8 Earth, 3 Astral, 3 Nature"),
+		s("66", "Cure Plant", "8 Earth, 1 Astral"),
+		s("66", "Monster Examine", "1 Astral, 1 Cosmic, 1 Mind"),
+		s("67", "Astral Contact (NPC Contact)", "2 Air, 1 Astral, 1 Cosmic"),
+		s("68", "Cure Other", "10 Earth, 1 Astral, 1 Law"),
+		s("68", "Humidify", "1 Fire, 3 Water, 1 Astral"),
+		s("69", "Moonclan Teleport", "2 Earth, 2 Astral, 1 Law"),
+		s("70", "Tele Group Moonclan", "4 Earth, 2 Astral, 1 Law"),
+		s("71", "Cure Me", "2 Astral, 2 Cosmic, 1 Law"),
+		s("71", "Ourania Teleport", "6 Earth, 2 Astral, 1 Law"),
+		s("71", "Hunter Kit", "2 Earth, 2 Astral"),
+		s("72", "Waterbirth Teleport", "1 Water, 2 Astral, 1 Law"),
+		s("73", "Tele Group Waterbirth", "5 Water, 2 Astral, 1 Law"),
+		s("74", "Cure Group", "2 Astral, 2 Cosmic, 2 Law"),
+		s("75", "Stat Spy", "2 Astral, 5 Body, 1 Cosmic"),
+		s("75", "Barbarian Teleport", "3 Fire, 2 Astral, 2 Law"),
+		s("76", "Tele Group Barbarian", "6 Fire, 2 Astral, 2 Law"),
+		s("76", "Spin Flax", "5 Air, 1 Astral, 2 Nature"),
+		s("77", "Superglass Make", "10 Air, 6 Fire, 2 Astral"),
+		s("78", "Tan Leather", "5 Fire, 2 Astral, 1 Nature"),
+		s("78", "Khazard Teleport", "4 Water, 2 Astral, 2 Law"),
+		s("79", "Tele Group Khazard", "8 Water, 2 Astral, 2 Law"),
+		s("79", "Dream", "2 Astral, 5 Body, 1 Cosmic"),
+		s("80", "String Jewellery", "10 Earth, 5 Water, 2 Astral"),
+		s("81", "Stat Restore Pot Share", "10 Earth, 10 Water, 2 Astral"),
+		s("82", "Magic Imbue", "7 Fire, 7 Water, 2 Astral"),
+		s("83", "Fertile Soil", "15 Earth, 3 Astral, 2 Nature"),
+		s("84", "Boost Potion Share", "12 Earth, 10 Water, 3 Astral"),
+		s("85", "Fishing Guild Teleport", "10 Water, 3 Astral, 3 Law"),
+		s("85", "Teleport to Target", "1 Chaos, 1 Death, 1 Law"),
+		s("86", "Tele Group Fishing Guild", "14 Water, 3 Astral, 3 Law"),
+		s("86", "Plank Make", "15 Earth, 2 Astral, 1 Nature"),
+		s("87", "Catherby Teleport", "10 Water, 3 Astral, 3 Law"),
+		s("88", "Tele Group Catherby", "15 Water, 3 Astral, 3 Law"),
+		s("89", "Ice Plateau Teleport", "8 Water, 3 Astral, 3 Law"),
+		s("89", "Recharge Dragonstone", "4 Water, 1 Astral, 1 Soul"),
+		s("90", "Tele Group Ice Plateau", "16 Water, 3 Astral, 3 Law"),
+		s("91", "Energy Transfer", "3 Astral, 2 Law, 1 Nature"),
+		s("92", "Heal Other", "3 Astral, 1 Blood, 3 Law"),
+		s("93", "Vengeance Other", "10 Earth, 3 Astral, 2 Death"),
+		s("94", "Vengeance", "10 Earth, 4 Astral, 2 Death"),
+		s("95", "Heal Group", "4 Astral, 3 Blood, 6 Law"),
+		s("96", "Spellbook Swap", "3 Astral, 2 Cosmic, 1 Law")
+	)),
+
+	ARCEUUS("Arceuus", Arrays.asList(
+		s("1", "Arceuus Home Teleport", "None"),
+		s("N/A", "Minigame Teleport", "None"),
+		s("6", "Arceuus Library Teleport", "2 Earth, 1 Law"),
+		s("16", "Basic Reanimation", "4 Body, 2 Nature"),
+		s("17", "Draynor Manor Teleport", "1 Earth, 1 Water, 1 Law"),
+		s("23", "Battlefront Teleport", "1 Earth, 1 Fire, 1 Law"),
+		s("28", "Mind Altar Teleport", "1 Law, 2 Mind"),
+		s("34", "Respawn Teleport", "1 Law, 1 Soul"),
+		s("35", "Ghostly Grasp", "4 Air, 1 Chaos"),
+		s("38", "Resurrect Lesser Ghost / Skeleton / Zombie", "10 Air, 1 Cosmic, 5 Mind (+ 2 prayer points)"),
+		s("40", "Salve Graveyard Teleport", "1 Law, 2 Soul"),
+		s("41", "Adept Reanimation", "4 Body, 3 Nature, 1 Soul"),
+		s("44", "Inferior Demonbane", "3 Fire, 1 Chaos"),
+		s("47", "Shadow Veil", "5 Earth, 5 Fire, 5 Cosmic"),
+		s("48", "Fenkenstrain's Castle Teleport", "1 Earth, 1 Law, 1 Soul"),
+		s("50", "Dark Lure", "1 Death, 1 Nature"),
+		s("56", "Skeletal Grasp", "8 Earth, 1 Death"),
+		s("57", "Resurrect Superior Ghost / Skeleton / Zombie", "10 Earth, 1 Cosmic, 5 Death (+ 4 prayer points)"),
+		s("59", "Mark of Darkness", "1 Cosmic, 1 Soul"),
+		s("61", "West Ardougne Teleport", "2 Law, 2 Soul"),
+		s("62", "Superior Demonbane", "5 Fire, 1 Soul"),
+		s("64", "Lesser Corruption", "1 Death, 2 Soul"),
+		s("65", "Harmony Island Teleport", "1 Law, 1 Nature, 1 Soul"),
+		s("66", "Vile Vigour", "3 Air, 1 Soul"),
+		s("70", "Degrime", "4 Earth, 2 Nature"),
+		s("71", "Cemetery Teleport", "1 Blood, 1 Law, 1 Soul"),
+		s("72", "Expert Reanimation", "1 Blood, 3 Nature, 2 Soul"),
+		s("73", "Ward of Arceuus", "1 Cosmic, 2 Nature, 4 Soul"),
+		s("76", "Resurrect Greater Ghost / Skeleton / Zombie", "10 Fire, 5 Blood, 1 Cosmic (+ 6 prayer points)"),
+		s("78", "Resurrect Crops", "25 Earth, 8 Blood, 12 Nature, 8 Soul"),
+		s("79", "Undead Grasp", "12 Fire, 1 Blood"),
+		s("80", "Death Charge", "1 Blood, 1 Death, 1 Soul"),
+		s("82", "Dark Demonbane", "7 Fire, 2 Soul"),
+		s("83", "Barrows Teleport", "1 Blood, 2 Law, 2 Soul"),
+		s("84", "Demonic Offering", "1 Soul, 1 Wrath"),
+		s("85", "Greater Corruption", "1 Blood, 3 Soul"),
+		s("85", "Teleport to Target", "1 Chaos, 1 Death, 1 Law"),
+		s("90", "Ape Atoll Teleport", "2 Blood, 2 Law, 2 Soul"),
+		s("90", "Master Reanimation", "2 Blood, 4 Nature, 4 Soul"),
+		s("92", "Sinister Offering", "1 Blood, 1 Wrath")
+	));
+
+	private final String displayName;
+	private final List<Spell> spells;
+
+	Spellbook(String displayName, List<Spell> spells)
+	{
+		this.displayName = displayName;
+		this.spells = Collections.unmodifiableList(spells);
+	}
+
+	private static Spell s(String level, String name, String runes)
+	{
+		return new Spell(level, name, runes);
+	}
+
+	@Override
+	public String toString()
+	{
+		return displayName;
+	}
+}
